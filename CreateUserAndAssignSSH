@@ -1,9 +1,11 @@
-adduser geordie
-usermod -aG sudo geordie
-sudo su - geordie
-mkdir /home/geordie/.ssh
-chmod 700 /home/geordie/.ssh
+echo "Create a username to use instead of root (lowercase):"
+read username
+adduser $username
+usermod -aG sudo $username
+sudo su - $username
+mkdir /home/$username/.ssh
+chmod 700 /home/$username/.ssh
 
-sudo cat /root/.ssh/authorized_keys >> /home/geordie/.ssh/authorized_keys
-sudo chown -R geordie /home/geordie/.ssh
-sudo chmod 600 /home/geordie/.ssh/authorized_keys
+sudo cat /root/.ssh/authorized_keys >> /home/$username/.ssh/authorized_keys
+sudo chown -R $username /home/$username/.ssh
+sudo chmod 600 /home/$username/.ssh/authorized_keys
