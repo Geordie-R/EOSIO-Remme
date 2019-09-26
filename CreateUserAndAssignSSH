@@ -1,0 +1,9 @@
+adduser geordie
+usermod -aG sudo geordie
+sudo su - geordie
+mkdir /home/geordie/.ssh
+chmod 700 /home/geordie/.ssh
+
+sudo cat /root/.ssh/authorized_keys >> /home/geordie/.ssh/authorized_keys
+sudo chown -R geordie /home/geordie/.ssh
+sudo chmod 600 /home/geordie/.ssh/authorized_keys
