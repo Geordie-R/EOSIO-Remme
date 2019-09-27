@@ -1,11 +1,10 @@
-echo "Create a username to use instead of root (lowercase):"
-read username
+#Unfinished
+read -p "Create a username to use instead of root (lowercase): " username
 adduser $username
 usermod -aG sudo $username
 sudo su - $username
 mkdir /home/$username/.ssh
 chmod 700 /home/$username/.ssh
-
 sudo cat /root/.ssh/authorized_keys >> /home/$username/.ssh/authorized_keys
 sudo chown -R $username /home/$username/.ssh
 sudo chmod 600 /home/$username/.ssh/authorized_keys
