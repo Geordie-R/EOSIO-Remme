@@ -1,4 +1,5 @@
-#Unfinished
+#!/usr/bin/env bash
+
 read -p "Create a username to use instead of root (lowercase): " username
 adduser $username
 usermod -aG sudo $username
